@@ -11,6 +11,8 @@ from app.mod_users.controllers import users, login_manager, csrf
 
 import os
 
+
+
 def create_app(config=None):
 
     app = Flask(__name__)
@@ -18,9 +20,11 @@ def create_app(config=None):
 
     # If no config file is passed in on the command line:
     if config is None:
-        config = os.path.join(app.root_path, os.environ.get('FLASK_APPLICATION_SETTINGS'))
+        # print app.instance_path
+        # config = os.path.join(app.root_path, '/config/example.cfg')
+        pass
 
-    app.config.from_pyfile(config)
+    app.config.from_pyfile('/Users/mlw/flask-bootstrap/config/example.cfg')
 
     # Secret key needed to use sessions.
     app.secret_key = app.config['SECRET_KEY']

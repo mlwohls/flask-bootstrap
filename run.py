@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from app import create_app
-  
+
+FLASK_APPLICATION_SETTINGS = '/config/travis.cfg'
+
 if __name__ == "__main__":
     app = create_app()
     app.logger.info("Debug status is: " + str(app.config['DEBUG']))
